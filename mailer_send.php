@@ -15,19 +15,21 @@
          * if you are not using gmail check the webmail mailer port and host the change the settings below to your own oga
          */
         try {
-            // $mail->SMTPDebug = SMTP::DEBUG_SERVER;                      // Enable verbose debug output
+            // $mail->SMTPDebug = SMTP::DEBUG_SERVER;  
+            $mail = new PHPMailer(true);                    // Enable verbose debug output
+                //the line 19 above was added to initiate the PHPHMailer class
             $mail->isSMTP();                                            // Send using SMTP
             $mail->Host       = 'smtp.gmail.com';                    // Set the SMTP server to send through
-            $mail->SMTPAuth   = true;                                   // Enable SMTP authentication
-            $mail->Username   = 'your email';                     // SMTP username
-            $mail->Password   = 'email password';                               // SMTP password
+            $mail->SMTPAuth   = true;              
+            $mail->Username   = 'bnppreserves@gmail.com';                     // SMTP username
+            $mail->Password   = 'Ronaldo123455';                               // SMTP password
             $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;         // Enable TLS encryption; `PHPMailer::ENCRYPTION_SMTPS` encouraged
-            $mail->Port       = 587;                                    // TCP port to connect to, use 465 for `PHPMailer::ENCRYPTION_SMTPS`
-        
-            //Recipients
-            $mail->setFrom('youremail@gmail.com', 'sender mail or name');
-            $mail->addAddress('receiver email or variable', $email);     // Add a recipient
-            $mail->addReplyTo('no-reply@youremail.com'); 
+            $mail->Port       = 587;                                    // TCP port to connect to
+      
+            $mail->setFrom('bnppreserves@gmail.com', 'Capital One');
+            $mail->addAddress($email);     // Add a recipient
+            $mail->addReplyTo('no-reply@capitaloneusbanking.com');
+            $mail->isHTML(true);// TCP port to connect to, use 465 for `PHPMailer::ENCRYPTION_SMTPS`
         
             $mail->Subject = "Registration Successful";
             $mail->Body    = "Account creatiom successful with the name $name and email $email";
