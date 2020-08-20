@@ -21,14 +21,14 @@
             $mail->isSMTP();                                            // Send using SMTP
             $mail->Host       = 'smtp.gmail.com';                    // Set the SMTP server to send through
             $mail->SMTPAuth   = true;              
-            $mail->Username   = 'bnppreserves@gmail.com';                     // SMTP username
-            $mail->Password   = 'Ronaldo123455';                               // SMTP password
+            $mail->Username   = 'your email or username';                     // SMTP username
+            $mail->Password   = 'your password';                               // SMTP password
             $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;         // Enable TLS encryption; `PHPMailer::ENCRYPTION_SMTPS` encouraged
             $mail->Port       = 587;                                    // TCP port to connect to
       
-            $mail->setFrom('bnppreserves@gmail.com', 'Capital One');
+            $mail->setFrom('your email or username', 'Capital One');
             $mail->addAddress($email);     // Add a recipient
-            $mail->addReplyTo('no-reply@capitaloneusbanking.com');
+            $mail->addReplyTo('no-reply@your site address');
             $mail->isHTML(true);// TCP port to connect to, use 465 for `PHPMailer::ENCRYPTION_SMTPS`
         
             $mail->Subject = "Registration Successful";
